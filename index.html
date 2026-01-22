@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>英語クエスト（低ストレス版）</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <header>
+    <h1>英語クエスト（低ストレス版）</h1>
+    <div class="sub">
+      🎯 目的：賢くなることより「触る回数」を増やす。30秒でも勝ち。学校タブレットOK（ブラウザだけ）。
+    </div>
+  </header>
+
+  <div class="wrap">
+    <div class="grid">
+
+      <div class="card">
+        <div class="row">
+          <span class="pill">🔥 連続 <span id="streak" class="big">0</span> 日</span>
+          <span class="pill">✅ 今日 <span id="todayDone">未</span></span>
+          <span class="pill">⭐ XP <span id="xp" class="big">0</span></span>
+        </div>
+
+        <div class="sep"></div>
+
+        <div class="row">
+          <button class="primary" id="btnQuick">クイック（30秒：単語1）</button>
+          <button id="btnEasy">イージー（2分：単語2＋短文）</button>
+          <button id="btnGram">文法1口（1分）</button>
+        </div>
+
+        <div class="sep"></div>
+
+        <div id="main">
+          <div class="hint">
+            迷ったら <b>クイック</b>。ゲーム前でもOK。失敗してもダメージなし。
+          </div>
+        </div>
+
+        <div id="toast" class="toast"></div>
+
+        <div class="sep"></div>
+
+        <div class="row">
+          <button class="ok" id="btnDone">今日やった（手動）</button>
+          <button id="btnAddXP">+1XP（学校用）</button>
+          <button class="ng" id="btnReset">初期化</button>
+        </div>
+
+        <div class="sep"></div>
+
+        <div class="row switch">
+          <input type="checkbox" id="schoolMode" />
+          <label for="schoolMode" class="mini">学校モード（確認ダイアログ等を減らす）</label>
+        </div>
+        <div class="mini">※「今日やった」は押し忘れても大丈夫。クエストを進めたら自動で記録される。</div>
+      </div>
+
+      <div class="card">
+        <div class="row">
+          <span class="pill">📦 単語追加（工学/ロボ歓迎）</span>
+          <span class="pill">単語数 <span id="count" class="big">0</span></span>
+        </div>
+
+        <p class="hint">
+          形式：<span class="mono">english = 日本語</span> を1行ずつ。例：<span class="mono">sensor = センサー</span>
+        </p>
+
+        <textarea id="wordBox" placeholder="robot = ロボット&#10;sensor = センサー&#10;motor = モーター"></textarea>
+
+        <div class="row" style="margin-top:10px;">
+          <button class="primary" id="btnAddWords">追加</button>
+          <button id="btnLoadSet">工学セット投入</button>
+        </div>
+
+        <div class="sep"></div>
+
+        <div class="row">
+          <span class="pill">🧠 文法の順番（中学）</span>
+        </div>
+
+        <div class="hint">
+          be動詞 → 一般動詞 → 疑問文 → 否定 → 過去。<br>
+          ここが固まると、長文の点が一気に伸びる。
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
